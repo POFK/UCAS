@@ -17,7 +17,7 @@ class CreatAllId(UCAS):
             h +
             g for j in Sb for i in Year for g in xxx for h in Xk for k in Dw]
         userID = np.array(userID)
-        np.save('../data/ALLid.npy',userID)
+        np.save('./data/ALLid.npy',userID)
         print 'creat ALLid ......'
 if __name__ == '__main__':
 #   f=CreatAllId.run()

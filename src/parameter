@@ -1,3 +1,4 @@
 CreatAllId     :    False
 passwd         :    ucas
-NumberToRun    :    2000
+NumberToRun    :    20000
+Path_allid     :    '../data/ALLid.npy'

@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # coding=utf-8
-def read(path='parameter'):
+def read(path='./parameter'):
     f=open(path,'r')
     par=f.readlines()
     f.close()
