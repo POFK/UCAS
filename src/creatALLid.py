@@ -6,10 +6,10 @@ class CreatAllId(UCAS):
     @classmethod
     def run(self):
         Sb = ['2', '1']
-        Year = ['2012', '2013', '2014', '2015','2016']
-        Dw = [str(i) for i in np.loadtxt('../data/danwei.txt', dtype=np.int32)]
+        Year = ['2013', '2014', '2015','2016']
+        Dw = [str(i) for i in np.loadtxt('./data/danwei.txt', dtype=np.int32)]
         Xk = ['%02d' % i for i in np.arange(1, 51)]
-        xxx = ['%03d' % i for i in np.arange(1, 3)]
+        xxx = ['%03d' % i for i in np.arange(1, 10)]
         userID = [
             i +
             j +

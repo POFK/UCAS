@@ -6,7 +6,7 @@ from creatALLid import CreatAllId
 from run import Run
 from read_par import read
 import sys
-par=read(sys.path[0]+'parameter')
+par=read('./parameter')
 if par['CreatAllId']:
     CreatAllId.run()
 

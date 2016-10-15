@@ -37,7 +37,7 @@ class LogIn(UCAS):
             return 'continue'      # username is a wrong ID, and can't log on.
 
 if __name__ == '__main__':
-    username = '201218004133017'
+    username = '201328018537002'
     pwd = 'ucas'
     f=LogIn()
-    f.run(username=username, pwd=pwd)
+    print f.run(username=username, pwd=pwd)

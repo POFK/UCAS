@@ -4,6 +4,7 @@ import numpy as np
 from UCAS import UCAS
 from login import LogIn
 from logout import logout
+import time
 class Run(UCAS):
     def __init__(self,pwd='ucas',num=300):
         self.pwd=pwd
@@ -23,6 +24,7 @@ class Run(UCAS):
         flogin=LogIn()
     ##########################################################################
         for username in self.userID:
+            time.sleep(0.1)
             #       print username
             self.ID_copy.remove(username)
             if username in self.ID.keys():
