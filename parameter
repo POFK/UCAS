@@ -1,4 +1,5 @@
 CreatAllId     :    False
+WriteValidAccounts  :   False
 passwd         :    ucas
 NumberToRun    :    1000
 Path_allid     :    '../data/ALLid.npy'

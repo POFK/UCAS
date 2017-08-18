@@ -10,6 +10,7 @@ def read(path='./parameter'):
         Par[x[0]]=x[1]
     Par['NumberToRun']=int(Par['NumberToRun'])
     Par['CreatAllId']=Par['CreatAllId']=='True'
+    Par['WriteValidAccounts']=Par['WriteValidAccounts']=='True'
     print Par
     return Par
 if __name__=='__main__':

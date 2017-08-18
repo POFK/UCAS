@@ -8,8 +8,11 @@ from read_par import read
 import sys
 par=read('./parameter')
 if par['CreatAllId']:
-    CreatAllId.run()
+    CREAT=CreatAllId()
+#   CREAT.run()
+    CREAT.run_Valid_accounts()
 
-f=Run(pwd=par['passwd'],num=par['NumberToRun'])
-f.run()
+func=Run(pwd=par['passwd'],num=par['NumberToRun'])
+func.WriteValidAccounts=par['WriteValidAccounts']
+func.run()
 

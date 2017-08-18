@@ -28,16 +28,22 @@ class LogIn(UCAS):
         # 返回处理后的数据
         response = conn.getresponse()
         res = response.read()
+#       print username,pwd,res[1:-1].split(',"')[2].split(':')[1]
         conn.close()
         if 'success' in res.split(',')[1]:
             print username + ':'
             print res
             return 'success'
+        elif res[1:-1].split(',"')[2].split(':')[1].find('用户不存在') != -1 :
+            return 'errorID'      # username is a wrong ID, and can't log in.
+        elif res[1:-1].split(',"')[2].split(':')[1].find('密码不匹配') != -1 :
+            return 'errorPW'
         else:
-            return 'continue'      # username is a wrong ID, and can't log on.
+            print 'error!', username, res
+            return 0
 
 if __name__ == '__main__':
-    username = '201418016443003'
+    username = '201428012215040'
     pwd = 'ucas'
     f=LogIn()
     print f.run(username=username, pwd=pwd)

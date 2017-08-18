@@ -6,10 +6,10 @@ class CreatAllId(UCAS):
     @classmethod
     def run(self):
         Sb = ['2', '1']
-        Year = ['2013', '2014', '2015','2016']
+        Year = ['2013', '2014', '2015']
         Dw = [str(i) for i in np.loadtxt('./data/danwei.txt', dtype=np.int32)]
         Xk = ['%02d' % i for i in np.arange(1, 51)]
-        xxx = ['%03d' % i for i in np.arange(1, 10)]
+        xxx = ['%03d' % i for i in np.arange(1, 2)]
         userID = [
             i +
             j +
@@ -19,9 +19,17 @@ class CreatAllId(UCAS):
         userID = np.array(userID)
         np.save('./data/ALLid.npy',userID)
         print 'creat ALLid ......'
+    def run_Valid_accounts(self):
+        with open('./Valid_accounts.txt','r') as f:
+            ID=f.readlines()
+            f.close()
+        ID=[i[:-1] for i in ID]
+        ids=np.array([i[:-3]+'%03d'%num for i in ID for num in np.arange(2,20) ])
+        np.save('./data/ALLid.npy',ids)
+
 if __name__ == '__main__':
-#   f=CreatAllId.run()
-#   f.run()
+    f=CreatAllId()
+    f.run_Valid_accounts()
     #or
-    CreatAllId.run()
+#   CreatAllId.run()
 
