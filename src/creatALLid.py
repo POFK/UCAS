@@ -24,7 +24,7 @@ class CreatAllId(UCAS):
             ID=f.readlines()
             f.close()
         ID=[i[:-1] for i in ID]
-        ids=np.array([i[:-3]+'%03d'%num for i in ID for num in np.arange(2,20) ])
+        ids=np.array([i[:-3]+'%03d'%num for i in ID for num in np.arange(2,50) ])
         np.save('./data/ALLid.npy',ids)
 
 if __name__ == '__main__':

@@ -40,7 +40,7 @@ def login_loop(Nloop=100):
         if NumLoop>Nloop:
             break
     if info.log == 'success':
-        time.sleep(3600)
+        time.sleep(600)
         logout()
         info.log=''
 

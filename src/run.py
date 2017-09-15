@@ -30,7 +30,8 @@ class Run(UCAS):
             if username in self.ID.keys():
                 continue
 #           log = flogin.run(username=username, pwd=self.pwd)
-            log = flogin.run(username=username, pwd=username)
+            self.pwd=username
+            log = flogin.run(username=username, pwd=self.pwd)
             if log == 'success':
                 f=open('./ucasID.txt','a')
                 f.writelines(username + '\t' + self.pwd + '\n')
